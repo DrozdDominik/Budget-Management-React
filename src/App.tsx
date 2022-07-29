@@ -1,8 +1,9 @@
 import React from 'react';
 import './App.css';
+import { RegisterForm } from './components/RegisterForm/RegisterForm';
 
 export const App = () => {
-  return <div className="App">"Hello world!"</div>;
+  return <RegisterForm />;
 };
 
 export default App;
