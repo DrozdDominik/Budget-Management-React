@@ -46,67 +46,75 @@ export const RegisterForm = () => {
   }
 
   if (id) {
-    return <h2>Udana rejestracja! Możesz się zalogować.</h2>;
+    return (
+      <div>
+        <h2>Udana rejestracja! Możesz się zalogować.</h2>
+        <Btn text="Logowanie" to="/login" />
+      </div>
+    );
   }
 
   return (
-    <form onSubmit={registerUser}>
-      <h1>Rejestracja użytkownika</h1>
-      <p>
-        <label>
-          Imię:
-          <input
-            type="text"
-            name="name"
-            required
-            minLength={2}
-            maxLength={30}
-            value={form.name}
-            onChange={e => updateForm('name', e.target.value)}
-          />
-        </label>
-      </p>
-      <p>
-        <label>
-          Email:
-          <input
-            type="email"
-            name="email"
-            required
-            value={form.email}
-            onChange={e => updateForm('email', e.target.value)}
-          />
-        </label>
-      </p>
-      <p>
-        <label>
-          Rodzina:
-          <input
-            type="text"
-            name="family"
-            required
-            minLength={3}
-            maxLength={50}
-            value={form.family}
-            onChange={e => updateForm('family', e.target.value)}
-          />
-        </label>
-      </p>
-      <p>
-        <label>
-          Hasło:
-          <input
-            type="password"
-            name="password"
-            required
-            minLength={7}
-            maxLength={15}
-            value={form.password}
-            onChange={e => updateForm('password', e.target.value)}
-          />
-        </label>
-      </p>
-      <Btn text="Zarejestruj!" />
-    </form>
+    <>
+      <form onSubmit={registerUser}>
+        <h1>Rejestracja użytkownika</h1>
+        <p>
+          <label>
+            Imię:
+            <input
+              type="text"
+              name="name"
+              required
+              minLength={2}
+              maxLength={30}
+              value={form.name}
+              onChange={e => updateForm('name', e.target.value)}
+            />
+          </label>
+        </p>
+        <p>
+          <label>
+            Email:
+            <input
+              type="email"
+              name="email"
+              required
+              value={form.email}
+              onChange={e => updateForm('email', e.target.value)}
+            />
+          </label>
+        </p>
+        <p>
+          <label>
+            Rodzina:
+            <input
+              type="text"
+              name="family"
+              required
+              minLength={3}
+              maxLength={50}
+              value={form.family}
+              onChange={e => updateForm('family', e.target.value)}
+            />
+          </label>
+        </p>
+        <p>
+          <label>
+            Hasło:
+            <input
+              type="password"
+              name="password"
+              required
+              minLength={7}
+              maxLength={15}
+              value={form.password}
+              onChange={e => updateForm('password', e.target.value)}
+            />
+          </label>
+        </p>
+        <Btn text="Zarejestruj!" />
+      </form>
+      <Btn text="Powrót do strony głównej" to="/" />
+    </>
   );
 };
