@@ -2,6 +2,7 @@ import React, { SyntheticEvent } from 'react';
 import { apiUrl } from '../../config/api';
 import { useState } from 'react';
 import { Btn } from '../common/Btn';
+import { UserRegisterResponse } from 'types';
 
 export const RegisterForm = () => {
   const [loading, setLoading] = useState(false);
@@ -33,7 +34,7 @@ export const RegisterForm = () => {
         },
         body: JSON.stringify(form),
       });
-      const data = await res.json();
+      const data: UserRegisterResponse = await res.json();
 
       setId(data.id);
     } finally {
